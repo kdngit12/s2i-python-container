@@ -68,6 +68,7 @@ COPY ./root/ /
 RUN \
     virtualenv-$PYTHON_VERSION ${APP_ROOT} && \
     chown -R 1001:0 ${APP_ROOT} && \
+    chmod g=u ${APP_ROOT} && \
     fix-permissions ${APP_ROOT} -P && \
     rpm-file-permissions
 
